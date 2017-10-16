@@ -23,6 +23,18 @@ public class StudentTest {
         Arrays.sort(A_sorted);
         int[] A = A_orig.clone();
         QuickSort.quicksort(A, 0, A.length);
+        String sort = "";
+
+        for (int i = 0; i < A.length-1; i++){
+            sort += (A[i]);
+        }
+        System.out.println("A : " + sort);
+
+        String newS = "";
+        for (int i = 0; i < A_sorted.length-1; i++){
+            newS += (A_sorted[i]);
+        }
+        System.out.println(newS);
         assertTrue(Arrays.equals(A, A_sorted));
     }
 
@@ -30,7 +42,7 @@ public class StudentTest {
     public void sortedQuicksort() throws Exception {
         Random gen = new Random();
         for (int k = 0; k != 10; ++k) {
-            int n = 10000;
+            int n = 100;
             int[] A_orig = new int[n];
             for (int i = 0; i != n; ++i)
                 A_orig[i] = gen.nextInt(n);
@@ -41,6 +53,20 @@ public class StudentTest {
 
             int[] A_sorted = A_orig.clone();
             Arrays.sort(A_sorted);
+
+            String sort = "";
+
+            for (int i = 0; i < A.length-1; i++){
+                sort += (A[i]);
+            }
+            System.out.println(sort);
+
+            String newS = "";
+            for (int i = 0; i < A_sorted.length-1; i++){
+                newS += (A_sorted[i]);
+            }
+            System.out.println(newS);
+
             assertTrue(Arrays.equals(A, A_sorted));
         }
     }
